@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Time and Date</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 100px;
+        }
+        #clock {
+            font-size: 24px;
+            line-height: 1.5;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+</head>
+<body>
+    <nav style="background-color: #2D333A; display: flex; justify-content: start; padding: 1%;">
+        <a href="#" style="color: #FFFFFF;">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="https://instagram.com/calendardude.pro" target="_blank" style="color: #FFFFFF;">Instagram</a>
+    </nav>
+    <div id="clock"></div>
+    
+    <script>
+        function updateTime() {
+            const now = moment();
+            const dayName = now.format('dddd');
+            const dateString = now.format('DD/MM/YYYY');
+            const timeString = now.format('hh:mm:ss A');
+            const output = `It is <b>${dateString}</b> today.<br>The day is <b>${dayName}</b>.<br>And the time is <b>${timeString}</b>.`;
+            
+            document.getElementById('clock').innerHTML = output;
+        }
+
+        setInterval(updateTime, 1000); // Update the time every second
+    </script>
+</body>
+</html>
+
